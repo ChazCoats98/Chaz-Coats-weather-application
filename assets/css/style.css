@@ -86,6 +86,30 @@ h1 {
     height: 100%;
 }
 
+.dropAlign {
+    padding: 0px 3px 2px 3px;
+}
+
+.dropdown {
+    display: none;
+    justify-items: center;
+    align-items: center;
+    margin: 0;
+    background-color: white;
+    border-radius: 15px;
+    padding-top: 2px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.textBox {
+    padding: 2px 6px 2px 6px;
+    margin: 2px 2px 2px 2px;
+}
+
 .searchBtn:hover {
-    cursor: po;
+    cursor: pointer;
+}
+
+.searchBtn:hover .dropdown {
+    display: block;
 }
