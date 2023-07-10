@@ -137,6 +137,10 @@ h1 {
 }
 
 .weatherInner {
+    font-family: 'caprasimo';
+    font-size: 20px;
+    color: var(--orange);
+    -webkit-text-stroke: .015mm var(--darkbrown);
     justify-content: center;
     display: flex;
     width: 94%;
@@ -152,10 +156,18 @@ h1 {
     background-color: #40322b;
     width: 400px;
     height: 700px;
+    margin: 10px 10px 10px 10px;
 }
 
 .newsDisp {
-    
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 200px;
+    justify-content: center;
+    background-color: var(--blue);
+    height: 250px;
+    width: 100px;
+
 }
 
 #advertBox1 {
