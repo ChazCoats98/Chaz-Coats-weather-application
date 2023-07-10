@@ -6,6 +6,7 @@
     --tan: #e3cdb7;
     --cream: #d5a36a;
     --blue: #91c3b3;
+    --yellow: #f8c560;
 }
 
 body {
@@ -26,7 +27,7 @@ h1 {
     display: flex;
     justify-items: start;
     align-items: center;
-    height: 100px;
+    height: 125px;
     width: 100%;
     background-color: var(--lightbrown);
     border: groove var(--darkbrown);
@@ -60,6 +61,7 @@ h1 {
     border-radius: 4px 4px 4px 4px;
     position: relative;
     height: 44px;
+    box-shadow: 3px 3px 3px var(--darkbrown);
 }
 
 .searchBoxInner {
@@ -116,6 +118,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     width: 70%;
+    justify-content: center;
 }
 
 .weatherBackground {
@@ -128,7 +131,9 @@ h1 {
     text-align: center;
     margin: 50px 30px 30px 0px;
     height: 250px;
+    max-width: 200px;
     background-color: var(--cream);
+    box-shadow: 3px 3px 3px var(--darkbrown);
 }
 
 .weatherInner {
@@ -136,5 +141,39 @@ h1 {
     display: flex;
     width: 94%;
     height: 94%;
-    background-color: var(--blue);
+    background-color: var(--yellow);
+}
+
+.newsBox {
+    position: absolute;
+    display: flex;
+    top: 240px;
+    left: 1400px;
+    background-color: #40322b;
+    width: 400px;
+    height: 700px;
+}
+
+.newsDisp {
+    
+}
+
+#advertBox1 {
+    display: flex;
+    width: 400px;
+    height: 100px;
+    background-color: var(--cream);
+    margin-left: auto;
+    margin-right: 30px;
+    box-shadow: 3px 3px 3px var(--darkbrown);
+
+}
+
+#advertBox2 {
+    display: flex;
+    width: 400px;
+    height: 100px;
+    background-color: var(--cream);
+    box-shadow: 3px 3px 3px var(--darkbrown);
+    margin: 10px 0px 5px 430px;
 }
