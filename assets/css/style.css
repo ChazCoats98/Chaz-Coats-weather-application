@@ -114,11 +114,21 @@ h1 {
     cursor: pointer;
 }
 
-.weatherDisp {
+.pageContent {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    max-width: 1920px;
+    margin: 0 24px 24px;
+}
+
+.weatherBox {
     display: flex;
     flex-wrap: wrap;
-    width: 70%;
+    width: 60%;
     justify-content: center;
+    margin-right: 24px;
 }
 
 .weatherBackground {
@@ -140,7 +150,7 @@ h1 {
     font-family: 'caprasimo';
     font-size: 20px;
     color: var(--orange);
-    -webkit-text-stroke: .015mm var(--darkbrown);
+    -webkit-text-stroke: .15mm var(--darkbrown);
     justify-content: center;
     display: flex;
     width: 94%;
@@ -149,25 +159,38 @@ h1 {
 }
 
 .newsBox {
-    position: absolute;
     display: flex;
-    top: 240px;
-    left: 1400px;
-    background-color: #40322b;
+    align-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    border: 0;
     width: 400px;
-    height: 700px;
-    margin: 10px 10px 10px 10px;
+    min-width: 400px;
+    height: 100%;
+    margin: 0;
+    margin-left: 8px;
+    padding: 0;
+}
+
+.newsHeader {
+    display: flex;
+    font-family: 'caprasimo';
+    transform: rotate(-3deg);
+    text-shadow: 3px 3px 3px var(--darkbrown);
+    font-size: 32px;
+    -webkit-text-stroke: .2mm var(--darkbrown);
+    color: var(--orange);
+    margin-left: 10px;
 }
 
 .newsDisp {
     display: flex;
-    flex-direction: row;
-    flex: 1 0 200px;
     justify-content: center;
-    background-color: var(--blue);
-    height: 250px;
-    width: 100px;
-
+    flex: 100%;
+    box-shadow: 3px 3px 3px var(--darkbrown);
+    margin: 10px 10px 10px 10px;
+    background-color: var(--cream);
+    height: 200px;
 }
 
 #advertBox1 {
@@ -176,7 +199,7 @@ h1 {
     height: 100px;
     background-color: var(--cream);
     margin-left: auto;
-    margin-right: 30px;
+    margin-right: 330px;
     box-shadow: 3px 3px 3px var(--darkbrown);
 
 }
