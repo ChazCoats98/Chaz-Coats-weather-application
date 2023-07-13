@@ -1,6 +1,23 @@
+var APIkey = ;
+
 var location = document.getElementById("location");
 var condition = document.getElementById("condition");
 var temp = document.getElementById("temp");
+
+let newsStories = [
+    {title: "",
+    content: "",
+},
+{title: "",
+content: "",
+},
+{title: "",
+content: "",
+},
+{title: "",
+content: "",
+},
+]
 
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success, error);
