@@ -5,6 +5,9 @@ $(document).ready(function() {
     var location = document.getElementById("location");
     var condition = document.getElementById("condition");
     var temp = document.getElementById("temp");
+    var title = document.getElementById("title");
+    var date = document.getElementById("date");
+    var content = document.getElementById("content");
     
     
     if (navigator.geolocation) {
@@ -83,4 +86,9 @@ $(document).ready(function() {
     "Six persons, including three with links to organized crime, have been accused by a Federal grand jury of conspiring to forge and cash United States savings bonds valued at $25,000. Among those arrested was Joseph Celso, of Jackson Town ship. In March, 1967, agents of the Federal Bureau of Investigation found two bodies on his property, a former poultry farm, where he still lives. The late J. Edgar Hoover, the F.B.I. director, had termed the farm “a Cosa Nostra burial farm.” Despite the moral complications you have to admit hit tenacity is impressive.",
     "Two knife wielding youths boarded a disabled bus in Har lem last night and robbed and intimidated several of its 50 passengers until they were routed by four plainclothes police officers. The robbery began at about 9:20 P.M., minutes after the bus's motor failed at 117th Street and Seventh Avenue while en route from midtown to the Riverdale section of the Bronx."]
     ];
+
+    if (currentDate === "July 13, 2023") {
+        title.innerText = newsStories1.titles[0];
+        console.log("success");
+    }
 });
