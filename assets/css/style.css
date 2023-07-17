@@ -95,14 +95,13 @@ h1 {
 }
 
 .dropdown {
-    display: none;
     justify-items: center;
     align-items: center;
     margin: 0;
     background-color: white;
     border-radius: 15px;
     padding-top: 2px;
-    box-shadow: 0 0 9px var(--darkbrown);
+    box-shadow: 0 7px 9px var(--darkbrown);
 }
 
 .textBox {
