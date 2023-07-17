@@ -9,26 +9,36 @@ $(document).ready(function() {
     var date = document.getElementById("date");
     var content = document.getElementById("content");
     
-    
+   function localWeather() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(success, error);
+        navigator.geolocation.getCurrentPosition(success);
     } else {
-        console.log("error");
+        $("#location").text("Location data not available. Search location to see weather results")
     }
-    
-    function success(position) {
-        var latitude = position.coords.latitude;
-        var longitude = position.coords.longitude;
+
+    function success() {
+        var lat = pos.coords.latitude;
+        var long = pos.coords.longitude;
+
+        localStorage.setItem("lat", lat);
+        localStorage.setItem("long", long);
         
-        console.log(latitude);
-        console.log(longitude);
     }
-    
-    function error() {
-        console.log("error");
-    }
-    
-    success();
+   };
+
+    $(".dropdown").hide();
+
+    $(".searchBox").hover(function(){
+        $(".dropdown").fadeToggle(200);
+    })
+
+    $(".searchBtn").click(function(){
+
+    });
+
+    $(".weatherInner").hover(function(){
+
+    });
     
     let newsStories1 = [
         titles, ["MORTGAGE RATES RAISED BY JERSEY; Increase to 8% Is Designed to Attract More Money— Albany May Follow Suit", "John Prinz Alters His Dancing Style To Dramatic Pose",
@@ -87,7 +97,7 @@ $(document).ready(function() {
     "Two knife wielding youths boarded a disabled bus in Har lem last night and robbed and intimidated several of its 50 passengers until they were routed by four plainclothes police officers. The robbery began at about 9:20 P.M., minutes after the bus's motor failed at 117th Street and Seventh Avenue while en route from midtown to the Riverdale section of the Bronx."]
     ];
 
-    if (currentDate === "July 13, 2023") {
+    if (currentDate == "July 14, 2023") {
         title.innerText = newsStories1.titles[0];
         console.log("success");
     }
