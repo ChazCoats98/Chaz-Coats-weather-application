@@ -193,9 +193,33 @@ h1 {
     height: 200px;
 }
 
+#location {
+    margin: 0;
+    font-family: 'caprasimo';
+    font-size: 24px;
+    color: var(--orange);
+    -webkit-text-stroke: .4mm var(--darkbrown);
+    text-shadow: 0 0 9px var(--darkbrown);
+}
+
+#condition {
+    margin: 0;
+    margin-left: 40px;
+}
+
+#temp {
+    margin: 0;
+    font-family: 'caprasimo';
+    font-size: 24px;
+    margin-left: 50px;
+    color: var(--orange);
+    -webkit-text-stroke: .4mm var(--darkbrown);
+    text-shadow: 0 0 9px var(--darkbrown);
+}
+
 #currentWeather {
     position: absolute;
-    left: 60px;
+    left: 30px;
     width: 120px;
     height: 120px;
 }

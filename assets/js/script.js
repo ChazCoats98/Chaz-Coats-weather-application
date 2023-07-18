@@ -33,11 +33,36 @@ $(document).ready(function() {
     function success(position) {
         var lat = position.coords.latitude;
         var long = position.coords.longitude;
-        var response = fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + long + "&appid=37049b04aa62927b70b6cb2d0bde88ff");
+        fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&units=imperial&appid=37049b04aa62927b70b6cb2d0bde88ff")
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log(JSON.stringify(data));
+                var temp = Math.round(data.main.temp);
+                var location = data.name;
+                var condition = data.weather[0].icon;
+                var conditionURL = "http://openweathermap.org/img/w/" + condition + ".png";
+                $("#temp").text(temp);
+                $("#location").text(location);
+                $("#icon").attr('src', conditionURL);
+            })
+            .catch(error => {
+
+            });
+            fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + long + "&units=imperial&appid=37049b04aa62927b70b6cb2d0bde88ff")
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                
+            })
+            .catch(error => {
+
+            });
 
 
-
-        $("#location").text(lat);
     };
     };
 
