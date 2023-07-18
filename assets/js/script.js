@@ -38,7 +38,6 @@ $(document).ready(function() {
                 return response.json();
             })
             .then(data => {
-                console.log(JSON.stringify(data));
                 var temp = Math.round(data.main.temp);
                 var location = data.name;
                 var condition = data.weather[0].icon;
@@ -56,6 +55,8 @@ $(document).ready(function() {
             })
             .then(data => {
                 console.log(data);
+                var tempSun = data.temp.day.toFixed(0);
+                console.log(tempSun);
                 
             })
             .catch(error => {
