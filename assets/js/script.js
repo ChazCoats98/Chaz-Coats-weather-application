@@ -9,23 +9,6 @@ $(document).ready(function() {
     var date = document.getElementById("date");
     var content = document.getElementById("content");
     
-   function localWeather() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(success);
-    } else {
-        $("#location").text("Location data not available. Search location to see weather results")
-    }
-
-    function success() {
-        var lat = pos.coords.latitude;
-        var long = pos.coords.longitude;
-
-        localStorage.setItem("lat", lat);
-        localStorage.setItem("long", long);
-        
-    }
-   };
-
     $(".dropdown").hide();
 
     $(".searchBox").hover(function(){
@@ -39,6 +22,27 @@ $(document).ready(function() {
     $(".weatherInner").hover(function(){
 
     });
+
+   function localWeather() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(success);
+    } else {
+        $("#location").text("Location data not available. Search location to see weather results")
+    }
+
+    function success(position) {
+        var lat = position.coords.latitude;
+        var long = position.coords.longitude;
+        var response = fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + long + "&appid=37049b04aa62927b70b6cb2d0bde88ff");
+
+
+
+        $("#location").text(lat);
+    };
+    };
+
+    localWeather();
+
     
     let newsStories1 = [
         titles, ["MORTGAGE RATES RAISED BY JERSEY; Increase to 8% Is Designed to Attract More Money— Albany May Follow Suit", "John Prinz Alters His Dancing Style To Dramatic Pose",
@@ -100,5 +104,7 @@ $(document).ready(function() {
     if (currentDate == "July 14, 2023") {
         title.innerText = newsStories1.titles[0];
         console.log("success");
-    }
+    };
+
+    
 });
