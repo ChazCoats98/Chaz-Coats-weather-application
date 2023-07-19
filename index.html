@@ -22,7 +22,7 @@
             <div class="searchBox">
                 <div class="searchBoxInner">
                     <form class="searchForm">
-                        <input class="searchInput" type="text" placeholder="Location">
+                        <input class="searchInput" id="searchInput" type="text" placeholder="Location">
                     </form>
                     <button class="searchBtn">
                         <!--Search icon borrowed from https://fontawesomeicons.com/svg/icons/search#ex-tab5-->
@@ -32,8 +32,7 @@
                 <div class="dropAlign">
                     <div class="dropdown">
                         <div class="textBox">
-                            <p>Chicago</p>
-                            <p>New York</p>
+                            <ul id="savedCities"></ul>
                         </div>
                     </div>
                 </div>
@@ -49,80 +48,58 @@
 <div class="pageContent">
     <div class="weatherBox">
         <div class="weatherBackground">
-            <div class="weatherInner" id="dispSun">
-                <h3>Sunday</h3>
-                <img id="iconSun" src="" alt="weather icon">
-                <p> Temp: <span id="tempSun"></span></p>
-                <p> Wind: <span id="windSun"></span></p>
-                <p> humidity: <span id="humSun"></span></p>
+            <div class="weatherInner">
+                <h3 class="weatherHead" id="day1"></h3>
+                <p> Temp: <span id="temp1"></span></p>
+                <img class="weatherIcon"  id="icon1" src="" alt="weather icon">
+                <p> humidity: <span id="hum1"></span></p>
             </div>
         </div>
         <div class="weatherBackground">
-            <div class="weatherInner" id="dispMon">
-                <h3>Monday</h3>
-                <img id="iconMon" src="" alt="weather icon">
-                <p> Temp: <span id="tempMon"></span></p>
-                <p> Wind: <span id="windMon"></span></p>
-                <p> humidity: <span id="humMon"></span></p>
+            <div class="weatherInner">
+                <h3 class="weatherHead" id="day2"></h3>
+                <p> Temp: <span id="temp2"></span></p>
+                <img class="weatherIcon" id="icon2" src="" alt="weather icon">
+                <p> humidity: <span id="hum2"></span></p>
             </div>
         </div>
         <div class="weatherBackground">
             <div class="weatherInner" id="dispTues">
-                <h3>Tuesday</h3>
-                <img id="iconTue" src="" alt="weather icon">
-                <p> Temp: <span id="tempTues"></span></p>
-                <p> Wind: <span id="windTues"></span></p>
-                <p> humidity: <span id="humTues"></span></p>
+                <h3 class="weatherHead" id="day3"></h3>
+                <p> Temp: <span id="temp3"></span></p>
+                <img class="weatherIcon" id="icon3" src="" alt="weather icon">
+                <p> humidity: <span id="hum3"></span></p>
             </div>
             </div>
         <div class="weatherBackground">
             <div class="weatherInner" id="dispWeds">
-                <h3>Wednesday</h3>
-                <img id="iconWed" src="" alt="weather icon">
-                <p> Temp: <span id="tempWed"></span></p>
-                <p> Wind: <span id="windWed"></span></p>
-                <p> humidity: <span id="humWed"></span></p>
+                <h3 class="weatherHead" id="day4"></h3>
+                <p> Temp: <span id="temp4"></span></p>
+                <img class="weatherIcon" id="icon4" src="" alt="weather icon">
+                <p> humidity: <span id="hum4"></span></p>
             </div>
         </div>
         <div class="weatherBackground">
             <div class="weatherInner" id="dispThur">
-                <h3>Thursday</h3>
-                <img id="iconThu" src="" alt="weather icon">
-                <p> Temp: <span id="tempThu"></span></p>
-                <p> Wind: <span id="windThu"></span></p>
-                <p> humidity: <span id="humThu"></span></p>
+                <h3 class="weatherHead" id="day5"></h3>
+                <p> Temp: <span id="temp5"></span></p>
+                <img class="weatherIcon" id="icon5" src="" alt="weather icon">
+                <p> humidity: <span id="hum5"></span></p>
             </div>
         </div>
-        <div class="weatherBackground">
-            <div class="weatherInner" id="dispFri">
-                <h3>Friday</h3>
-                <img id="iconFri" src="" alt="weather icon">
-                <p> Temp: <span id="tempFri"></span></p>
-                <p> Wind: <span id="windFri"></span></p>
-                <p> humidity: <span id="humFri"></span></p>
-            </div>
         </div>
-        <div class="weatherBackground">
-            <div class="weatherInner" id="dispSat">
-                <h3>Saturday</h3>
-                <img id="iconSat" src="" alt="weather icon">
-                <p> Temp: <span id="tempSat"></span></p>
-                <p> Wind: <span id="windSat"></span></p>
-                <p> humidity: <span id="humSat"></span></p>
+        <div class="newsBox">
+            <h3 class="newsHeader">Trending news stories from this day in the 70s</h3>
+            <div class="newsDisp" id="news1">
+                <p id="title"></p>
+                <p id="date"></p>
+                <p id="content"></p>
             </div>
+            <div class="newsDisp" id="news2"></div>
+            <div class="newsDisp" id="news3"></div>
+            <div class="newsDisp" id="news4"></div>
         </div>
     </div>
-<div class="newsBox">
-    <h3 class="newsHeader">Trending news stories from this day in the 70s</h3>
-    <div class="newsDisp" id="news1">
-        <p id="title"></p>
-        <p id="date"></p>
-        <p id="content"></p>
-    </div>
-    <div class="newsDisp" id="news2"></div>
-    <div class="newsDisp" id="news3"></div>
-    <div class="newsDisp" id="news4"></div>
-</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./assets/js/script.js"></script>

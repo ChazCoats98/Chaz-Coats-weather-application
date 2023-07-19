@@ -23,6 +23,10 @@ h1 {
     transform: rotate(-3deg);
 }
 
+span {
+    margin: 0;
+}
+
 .headerBox {
     display: flex;
     justify-items: start;
@@ -146,16 +150,29 @@ h1 {
     box-shadow: 0 0 9px var(--darkbrown);
 }
 
+.weatherHead {
+    margin: 0;
+}
+
 .weatherInner {
     font-family: 'caprasimo';
     font-size: 20px;
     color: var(--orange);
     -webkit-text-stroke: .15mm var(--darkbrown);
     justify-content: center;
+    align-items: center;
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     width: 94%;
     height: 94%;
     background-color: var(--yellow);
+}
+
+.weatherIcon {
+    margin: 0;
+    width: 50px;
+    height: 50px;
 }
 
 .newsBox {
