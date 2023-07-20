@@ -8,20 +8,14 @@ $(document).ready(function() {
     var title = document.getElementById("title");
     var date = document.getElementById("date");
     var content = document.getElementById("content");
-    
+    var form = document.getElementById("searchInput");
+
     $(".dropdown").hide();
 
     $(".searchBox").hover(function(){
         $(".dropdown").fadeToggle(200);
     })
 
-    $(".searchBtn").click(function(){
-
-    });
-
-    $(".weatherInner").hover(function(){
-
-    });
 
    function localWeather() {
     if (navigator.geolocation) {
@@ -110,10 +104,24 @@ $(document).ready(function() {
     };
     };
 
-    function weatherChoice(){
+    var citiesArr = [];
+    function saveCities(data) {
+        event.preventDefault();
+        citiesArr.push($("#searchInput").val());
+        $("#searchInput").val("");
+        $("#savedCities").text("");
         
+        $.each(citiesArr, function(index, value) {
+            $("#savedCities").append("<li class='cityItem' id='cityNum("+index+")'>"+value +'</li>');
+            localStorage.setItem(index, value);
+        })
+        
+    };
+    function addtotextbox(id) {
+        $("searchInput").val(citiesArr[id]);
     }
-
+    $("form").on("submit", saveCities)
+    
     localWeather();
 
     
@@ -174,10 +182,7 @@ $(document).ready(function() {
     "Two knife wielding youths boarded a disabled bus in Har lem last night and robbed and intimidated several of its 50 passengers until they were routed by four plainclothes police officers. The robbery began at about 9:20 P.M., minutes after the bus's motor failed at 117th Street and Seventh Avenue while en route from midtown to the Riverdale section of the Bronx."]
     ];
 
-    if (currentDate == "July 14, 2023") {
-        title.innerText = newsStories1.titles[0];
-        console.log("success");
-    };
+
 
     
 });
