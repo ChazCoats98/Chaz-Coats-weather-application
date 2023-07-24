@@ -12,6 +12,6 @@ The main lesson i learned was the importance of starting with the minimum functi
 
 
 ## Links 
-Repository:
+Repository: https://github.com/ChazCoats98/Chaz-Coats-weather-application
 
-Application:
+Application: https://chazcoats98.github.io/Chaz-Coats-weather-application/
