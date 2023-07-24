@@ -104,23 +104,90 @@ $(document).ready(function() {
     };
     };
 
-    var citiesArr = [];
-    function saveCities(data) {
+    
+    // var citiesArr = [];
+    // function saveCities(data) {
+    //     event.preventDefault();
+    //     citiesArr.push($("#searchInput").val());
+    //     $("#searchInput").val("");
+    //     $("#savedCities").text("");
+        
+    //     $.each(citiesArr, function(index, value) {
+    //         $("#savedCities").append("<li class='cityItem' id='cityNum("+index+")'>"+value +'</li>');
+    //         localStorage.setItem(index, value);
+    //     })
+    // };
+    // function addtotextbox(id) {
+    //     $("searchInput").val(citiesArr[id]);
+    // }
+
+    // $("form").on("submit", saveCities);
+
+    function searchWeather(cityName) {
         event.preventDefault();
-        citiesArr.push($("#searchInput").val());
-        $("#searchInput").val("");
-        $("#savedCities").text("");
-        
-        $.each(citiesArr, function(index, value) {
-            $("#savedCities").append("<li class='cityItem' id='cityNum("+index+")'>"+value +'</li>');
-            localStorage.setItem(index, value);
+        var cityName = JSON.stringify($("#searchInput").val());
+        console.log(cityName);
+        fetch("https://api.openweathermap.org/data/2.5/forecast?q="+cityName+"&units=imperial&appid=37049b04aa62927b70b6cb2d0bde88ff")
+        .then(response => {
+            return response.json();
         })
-        
-    };
-    function addtotextbox(id) {
-        $("searchInput").val(citiesArr[id]);
+        .then(data => {
+            console.log(data);
+            var temp1 = data.list[1].main.temp;
+            var temp2 = data.list[9].main.temp;
+            var temp3 = data.list[17].main.temp;
+            var temp4 = data.list[25].main.temp;
+            var temp5 = data.list[33].main.temp;
+            $("#temp1").text(temp1);
+            $("#temp2").text(temp2);
+            $("#temp3").text(temp3);
+            $("#temp4").text(temp4);
+            $("#temp5").text(temp5);
+            var day1 = data.list[1].dt_txt;
+            var day2 = data.list[9].dt_txt;
+            var day3 = data.list[17].dt_txt;
+            var day4 = data.list[25].dt_txt;
+            var day5 = data.list[33].dt_txt;
+            $("#day1").text(day1);
+            $("#day2").text(day2);
+            $("#day3").text(day3);
+            $("#day4").text(day4);
+            $("#day5").text(day5);
+            var hum1 = data.list[1].main.humidity;
+            var hum2 = data.list[9].main.humidity;
+            var hum3 = data.list[17].main.humidity;
+            var hum4 = data.list[25].main.humidity;
+            var hum5 = data.list[33].main.humidity;
+            $("#hum1").text(hum1);
+            $("#hum2").text(hum2);
+            $("#hum3").text(hum3);
+            $("#hum4").text(hum4);
+            $("#hum5").text(hum5);
+            var icon1 = data.list[1].weather[0].icon;
+            var icon2 = data.list[9].weather[0].icon;
+            var icon3 = data.list[17].weather[0].icon;
+            var icon4 = data.list[25].weather[0].icon;
+            var icon5 = data.list[33].weather[0].icon;
+            var icon1URL = "http://openweathermap.org/img/w/" + icon1 + ".png";
+            var icon2URL = "http://openweathermap.org/img/w/" + icon2 + ".png";
+            var icon3URL = "http://openweathermap.org/img/w/" + icon3 + ".png";
+            var icon4URL = "http://openweathermap.org/img/w/" + icon4 + ".png";
+            var icon5URL = "http://openweathermap.org/img/w/" + icon5 + ".png";
+            $("#icon1").attr('src', icon1URL);
+            $("#icon2").attr('src', icon2URL);
+            $("#icon3").attr('src', icon3URL);
+            $("#icon4").attr('src', icon4URL);
+            $("#icon5").attr('src', icon5URL);
+            
+        })
+        .catch(error => {
+
+        });
+
+
     }
-    $("form").on("submit", saveCities)
+
+    $("form").on("submit", searchWeather);
     
     localWeather();
 
