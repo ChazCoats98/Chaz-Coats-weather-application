@@ -160,7 +160,7 @@ $(document).ready(function() {
         
     };
     
-    
+    //This function creates a new list item for each search result saved. I ran out of time to figure out local storage and couldnt get the elements to be inputed into the form on click. I believe its due to the onload function? 
     var citiesArr = [];
     function saveCities(data) {
         event.preventDefault();
@@ -179,7 +179,9 @@ $(document).ready(function() {
     
     $("form").on("submit", saveCities);
     $("form").on("submit", searchWeather);
-    
+
+
+    //for future implementation. Historic news articles from the 70s. Will use dayjs to get month and year to attach to fetch call
     function HistoricNews() {
         fetch("https://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yfIuGK0PqAnJff81ejU5wgAcRsP2tEoa/1973/7.json")
         .then(response => {
@@ -193,6 +195,7 @@ $(document).ready(function() {
     };
     HistoricNews();
 
+    //advert rotation. Once it switches through each advert there is no ad displayed. Will fix this with an array and for loop in the future. 
     function AdRotation(){
        var active = $(".advertInner .active");
        var next = ($(".advertInner .active").next().length > 0) ? 
