@@ -92,25 +92,7 @@ $(document).ready(function() {
     };
     localWeather();
 
-    //This function saves the searched city and ads it to a dropdown box under the search bar. Though if implemented it breaks the weather display function. 
-    // var citiesArr = [];
-    // function saveCities(data) {
-    //     event.preventDefault();
-    //     citiesArr.push($("#searchInput").val());
-    //     $("#searchInput").val("");
-    //     $("#savedCities").text("");
-        
-    //     $.each(citiesArr, function(index, value) {
-    //         $("#savedCities").append("<li class='cityItem' id='cityNum("+index+")'>"+value +'</li>');
-    //         localStorage.setItem(index, value);
-    //     })
-    // };
-    // function addtotextbox(id) {
-    //     $("searchInput").val(citiesArr[id]);
-    // }
-
-    // $("form").on("submit", saveCities);
-
+    
     //This function takes the inputted city from the search bar form and uses that to make a call for the weather info for that city. Then it overwrites the currently displayed weather data. 
     function searchWeather(cityName) {
         event.preventDefault();
@@ -175,13 +157,51 @@ $(document).ready(function() {
             $("#icon5").attr('src', icon5URL);
             
         });
-
+        
     };
-
+    
+    
+    var citiesArr = [];
+    function saveCities(data) {
+        event.preventDefault();
+        citiesArr.push($("#searchInput").val());
+        $("#savedCities").text("");
+        console.log(citiesArr);
+        
+        $.each(citiesArr, function(index, value) {
+            $('#savedCities').append("<li class='citiesList'  onclick='addtotextbox("+index+")'>" + value + '</li>');
+            localStorage.setItem(index, value);
+        })
+        function addtotextbox(id) {
+            $("#searchInput").val(citiesArr[id]);
+        }
+    };
+    
+    $("form").on("submit", saveCities);
     $("form").on("submit", searchWeather);
     
+    function HistoricNews() {
+        fetch("https://api.nytimes.com/svc/archive/v1/2019/1.json?api-key=yfIuGK0PqAnJff81ejU5wgAcRsP2tEoa/1973/7.json")
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            
+            
+        });
+    };
+    HistoricNews();
 
+    function AdRotation(){
+       var active = $(".advertInner .active");
+       var next = ($(".advertInner .active").next().length > 0) ? 
+       $(".advertInner .active").next() : $("m.advertInner img:first");
+       active.removeClass("active");
+       next.addClass("active");
+    }
 
-
+    setInterval(AdRotation, 60000);
+    
     
 });
