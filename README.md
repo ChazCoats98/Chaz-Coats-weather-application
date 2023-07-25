@@ -6,7 +6,8 @@ The goal of this project was to build a working weather app where the user could
 The main lesson i learned was the importance of starting with the minimum functioning product and then building on that. I'll definitely apply this mindset to future projects.
 
 ## Functionality 
-[Untitled_ Jul 24, 2023 7_22 PM.webm](https://github.com/ChazCoats98/Chaz-Coats-weather-application/assets/134428862/19254a3c-a6b5-4351-a35b-797ead06bdeb)
+[Untitled_ Jul 25, 2023 11_22 AM.webm](https://github.com/ChazCoats98/Chaz-Coats-weather-application/assets/134428862/c0c6d020-9f7e-4200-851b-7107cf1059e5)
+
 
 
 
